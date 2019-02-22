@@ -19,6 +19,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="src/js/bootstrap-dropdownhover.js"></script>
+        
+
 
         <script src="src/leaflet-src.js"></script>
         <!-- <script src="src/jquery-3.2.0.min.js"></script> -->
@@ -32,6 +34,7 @@
         <script src="src/plugins/leaflet-opencage/src/js/L.Control.OpenCageSearch.js"></script>
         <script src="src/leaflet.wms.js"></script>
         <link rel="stylesheet" type="text/css" href="src/css/component.css" />
+        <script src="src/plugins/leaflet.ajax.min.js"></script>
         <script src="src/js/modernizr-custom.js"></script>
         <style>
             #mapdiv {
@@ -39,22 +42,22 @@
             }
 
             #side-bar {
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: #ffffff;
                 /* text-decoration-color: red; */
             }
             /* unvisited link */
             a:link {
-            color: white;
+            color: black;
             }
 
             /* visited link */
             a:visited {
-            color: white;
+            color: green;
             }
 
             /* mouse over link */
             a:hover {
-            color: green;
+            color: blue;
             }
 
             a:active {
@@ -67,88 +70,7 @@
         </style>
     </head>
     <body>
-        <!-- <div id="side-bar" >
-            
-
-              <div class="dropdown dropdown-inline">
-                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Mumbai<span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  
-                    <li class="dropdown">
-                    <a href="#">DP layers<span class="caret"></span></a>
-                    <ul class="dropdown-menu dropdownhover-left">
-                      <li class="dropdown">
-                        <a href="#">education <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdownhover-left">
-                          <li><a id = "primary_school" href="#">Primary</a></li>
-                          <li><a href="#">Secondary</a></li>
-                          <li><a href="#">High School</a></li>
-                          <li><a href="#">University</a></li>
-                        </ul>
-                    </li>
-                    </ul> 
-                  </li>
-
-                  <li class="dropdown">
-                    <a href="#">Census<span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdownhover-left">
-                            <li><a href="#"><i>Boundries</i></a></li>
-                            <hr/>
-                          <li class="dropdown">
-                              <a href="#">Maharashtra<span class="caret"></span></a>
-                              <ul class="dropdown-menu dropdownhover-right">
-                                <li><a id = 'district_layer' href="#">District</a></li>
-                                
-                                <li><a id = 'ddw_layer'href="#">Village</a></li>
-                              
-                               
-                              </ul>
-                          </li>
-                          <li class="dropdown">
-                            <a href="#">Mumbai<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdownhover-right">
-                                    <li><a id = 'ward_layer' href="#">Wards</a></li>
-                                
-                
-                            </ul>
-                        </li>
-                        </ul> 
-                 </li>
-
-                  <li class="dropdown">
-                    <a href="#">SWM<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdownhover-left">
-                              <li><a id='buildingLocate' href="#">Building Layer</a></li>
-                              <li><a id = 'roadLayer'href="#">Road Layer</a></li>
-                              <li><a href="#">Public Building</a></li>
-                              <li><a href="#">Corporate Wards</a></li>
-                              <li><a href="#">Admin Ward Boundary</a></li>
-                              <li class="dropdown">
-                                  <a href="#">Greenness<span class="caret"></span></a>
-                                  <ul class="dropdown-menu dropdownhover-left">
-                                        <li><a href="#">Building:Seggregation wise</a></li>
-                                        <li><a href="#">Building:Composting wise</a></li>
-                                        <li><a href="#">Corporate:Seggregation wise</a></li>
-                                        <li><a href="#">Corporate:Seggregation wise</a></li>
-                                  </ul>     
-                                </li>
-                            </ul> 
-                      </li>
-
-                      <li class="dropdown">
-                        <a href="#">Analytics<span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdownhover-left">
-                                <li><a href="#">Education</a></li>
-                                <li><a href="#">Health</a></li>
-                            </ul> 
-                      </li>
-                  
-                </ul>
-
-
-                
-              </div>
-        </div> -->
+        
         <div id="side-bar">
                 <!-- Main container -->
                 <div >
@@ -175,7 +97,7 @@
                             <!-- Submenu 1-1 -->
                             <ul data-menu="submenu-1-1" id="submenu-1-1" class="menu__level" tabindex="-1" role="menu" aria-label="DP Layer">
                                 <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-1-1" aria-owns="submenu-1-1-1" href="#">Education<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Health</a></li>
+                                  <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Health</a></li>
                     
                             </ul>
                             <!-- Submenu 1-1-1 -->
@@ -207,18 +129,19 @@
                             </ul>
                             <!-- Submenu 1-4 -->
                             <ul data-menu="submenu-1-4" id="submenu-1-4" class="menu__level" tabindex="-1" role="menu" aria-label="SWM">
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building Layer</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" id="buildingLocate" href="#">Building Layer</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building Cluster/complex/slum boundries</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Public Building</a></li>
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Road Layer</a></li>
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Corporate ward boundary</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" id="roadLayer" href="#">Road Layer</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" id="corporatorwise" href="#">Corporate ward boundary</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Admin ward boundary</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7" aria-owns="submenu-1-4-7" href="#">Greenness<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
 
                             </ul>
                             <!-- Submenu 1-4-7 -->
                             <ul data-menu="submenu-1-4-7" id="submenu-1-4-7" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Greenness">
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Seggregation wise</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" id="buildseg" href="#">Building: Seggregation wise</a></li>
+                                
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Coorporate: Seggregation wise</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Coorporate: Composting wise</a></li>
@@ -270,6 +193,17 @@
                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">India</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Maharashra</a></li>
                         </ul> 
+                        <div id="divFilterEagle" class="col-xs-12">
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='fltEagle' value='ALL' checked>All
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='fltEagle' value='Yes'>Yes
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='fltEagle' value='No'>No
+                                    </div>
+                                </div>
                         </div>
                     </nav>
                     
@@ -346,7 +280,7 @@
             var ctlLayers;
             var objBasemaps;
             var objOverlays;
-            var building, roads,primarys,districtL,wardl,ddwl;
+            var building, roads,primarys,districtL,wardl,ddwl,buildseg,corporatorwise;
             var source = L.wms.source(
                 "http://13.82.229.27/geoserver/wfs",
                 {
@@ -444,6 +378,14 @@
                     addBuildingLayer();
                 });
 
+                $("#buildseg").click(function(){
+                    addBuildsegLayer();
+                });
+
+                 $("#corporatorwise").click(function(){
+                    addCorporatorLayer();
+                });
+
                 $("#roadLayer").click(function(){
                     addRoadLayer();
                 });
@@ -474,8 +416,9 @@
                     $("#image-opacity").html(this.value);
                     lyrChapultepec.setOpacity(this.value);
                 });
-            });
-            
+            }); //end of ready function
+           
+
             function LatLngToArrayString(ll) {
 //                console.log(ll);
                 return "["+ll.lat.toFixed(5)+", "+ll.lng.toFixed(5)+"]";
@@ -488,6 +431,45 @@
                     building = 0;
                 }else{
                     building = source.getLayer("geonode:buildings_in_hwest").addTo(mymap);
+                }
+                
+            }
+
+            function addCorporatorLayer(){
+                console.log('this is corporatorwise ');
+                if(corporatorwise){
+                    corporatorwise.remove(mymap);
+                    corporatorwise = 0;
+                }else{
+                    corporatorwise = source.getLayer("geonode:ward_boundaries_after_cleaning").addTo(mymap);
+                }
+                
+            }
+
+            function addBuildsegLayer(){
+                var blueMarker = {
+  radius: 8,
+  fillColor: "#00ff00",
+  fillOpacity: 1
+};
+
+var redMarker = {
+  radius: 8,
+  fillColor: "#ff0000",
+  fillOpacity: 1
+}
+                console.log('this is fulcrum data ');
+                if(buildseg){
+                    buildseg.remove(mymap);
+                    buildseg = 0;
+                }else{
+                   buildseg = L.geoJSON.ajax('data/new_swm_hwest.geojson', {
+     pointToLayer: returnEagleMarker, filter:filterEagle
+     // filter: function(feature, layer) {   
+     //     return (feature.properties.society_name === "Amber");
+     //   }
+  }).addTo(mymap);
+
                 }
                 
             }
@@ -547,6 +529,34 @@
                     ddwl = source.getLayer("geonode:ddw").addTo(mymap);
                 }  
             }
+
+            //filter functions
+
+            function returnEagleMarker(json, latlng){
+                var att = json.properties;
+                if (att.is_the_segregation_at_source_adequate=='Yes') {
+                    var clrNest = 'deeppink';
+                } else {
+                    var clrNest = 'chartreuse';
+                }
+                // arEagleIDs.push(att.nest_id.toString());
+                return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<h4>Society Name: "+att.society_name+"</h4>Segeregation at source: "+att.is_the_segregation_at_source_adequate);
+            }
+
+            function filterEagle(json) {
+                var att=json.properties;
+                var optFilter = $("input[name=fltEagle]:checked").val();
+                if (optFilter=='ALL') {
+                    return true;
+                } else {
+                    return (att.is_the_segregation_at_source_adequate==optFilter);
+                }
+            }
+
+            $("input[name=fltEagle]").click(function(){
+                //arEagleIDs=[];
+                buildseg.refresh();
+            });
 
         </script>
     </body>
