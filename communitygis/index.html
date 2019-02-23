@@ -52,7 +52,7 @@
 
             /* visited link */
             a:visited {
-            color: green;
+            color: black;
             }
 
             /* mouse over link */
@@ -66,6 +66,37 @@
             #menu__link{
               color: aqua;  
             }
+
+            
+
+            .col-xs-12, .col-xs-6, .col-xs-4 {
+                padding:3px;
+            }
+
+            #divProject {
+                background-color: beige;
+            }
+            
+            #divBUOWL {
+                background-color: #ffffb3;
+            }
+            
+            #divEagle {
+                background-color: #ccffb3;
+                width: auto;
+            }
+            
+            #divRaptor {
+                background-color: #e6ffff;
+            }
+            
+            .errorMsg {
+                padding:0;
+                text-align:center;
+                background-color:darksalmon;
+            }
+            
+        
 
         </style>
     </head>
@@ -140,12 +171,80 @@
                             </ul>
                             <!-- Submenu 1-4-7 -->
                             <ul data-menu="submenu-1-4-7" id="submenu-1-4-7" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Greenness">
-                                <li class="menu__item" role="menuitem"><a class="menu__link" id="buildseg" href="#">Building: Seggregation wise</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-1" aria-owns="submenu-1-4-7-1" href="#">Building: Seggregation wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-2" aria-owns="submenu-1-4-7-2" href="#">Building: Composting wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
                                 
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li>
+                                <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Coorporate: Seggregation wise</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Coorporate: Composting wise</a></li>
                             </ul>
+
+                            <!-- Submenu 1-4-7-1 -->
+
+                            <ul data-menu="submenu-1-4-7-1" id="submenu-1-4-7-1" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Seggregation wise">
+                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
+                                 <li class="menu__item" role="menuitem"><a id="buildseg" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
+                                <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
+                                <div id="divFilterEagle" class="col-xs-12">
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='fltEagle' value='ALL' checked>All
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='fltEagle' value='Yes'>Yes
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='fltEagle' value='No'>No
+                                    </div>
+                                </div>
+                            </ul>
+
+                            <ul data-menu="submenu-1-4-7-2" id="submenu-1-4-7-2" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Seggregation wise">
+                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
+                                 <li class="menu__item" role="menuitem"><a id="buildcomp" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
+                                <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
+                                <div id="divFilterEagle" class="col-xs-12">
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='optbcomp' value='ALL' checked>All
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='optbcomp' value='Yes'>Yes
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='optbcomp' value='No'>No
+                                    </div>
+                                </div>
+                            </ul>
+
+                                <!-- <div id="divEagle" class="col-xs-12">
+                <div id="divEagleLabel" class="text-center col-xs-12">
+                    <h4 id="lblEagle">Eagle Nests</h4>
+                </div>
+                <div id="divEagleError" class="errorMsg col-xs-12"></div>
+                <div id="divFindEagle" class="form-group has-error">
+                    <div class="col-xs-6">
+                        <input type="text" id="txtFindEagle" class="form-control" placeholder="Eagle Nest ID">
+                    </div>
+                    <div class="col-xs-6">
+                        <button id="btnFindEagle" class="btn btn-primary btn-block" disabled>Find Eagle Nest</button>
+                    </div>
+                </div>
+                <div id="divFilterEagle" class="col-xs-12">
+                    <div class="col-xs-4">
+                        <input type='radio' name='fltEagle' value='ALL' checked>All
+                    </div>
+                    <div class="col-xs-4">
+                        <input type='radio' name='fltEagle' value='ACTIVE NEST'>Active
+                    </div>
+                    <div class="col-xs-4">
+                        <input type='radio' name='fltEagle' value='INACTIVE LOCATION'>Inactive
+                    </div>
+                </div>
+                <div class="" id="divEagleData"></div>
+            </div> -->
+                           
+
                             <!-- Submenu 2 -->
                             <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Selection">
                                 <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-1" aria-owns="submenu-2-1" href="#">Mumbai<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
@@ -193,17 +292,7 @@
                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">India</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Maharashra</a></li>
                         </ul> 
-                        <div id="divFilterEagle" class="col-xs-12">
-                                    <div class="col-xs-4">
-                                        <input type='radio' name='fltEagle' value='ALL' checked>All
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <input type='radio' name='fltEagle' value='Yes'>Yes
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <input type='radio' name='fltEagle' value='No'>No
-                                    </div>
-                                </div>
+                        
                         </div>
                     </nav>
                     
@@ -280,7 +369,7 @@
             var ctlLayers;
             var objBasemaps;
             var objOverlays;
-            var building, roads,primarys,districtL,wardl,ddwl,buildseg,corporatorwise;
+            var building, roads,primarys,districtL,wardl,ddwl,buildseg,corporatorwise,buildcomp;
             var source = L.wms.source(
                 "http://13.82.229.27/geoserver/wfs",
                 {
@@ -382,6 +471,10 @@
                     addBuildsegLayer();
                 });
 
+                 $("#buildcomp").click(function(){
+                    addBuildcompLayer();
+                });
+
                  $("#corporatorwise").click(function(){
                     addCorporatorLayer();
                 });
@@ -441,34 +534,45 @@
                     corporatorwise.remove(mymap);
                     corporatorwise = 0;
                 }else{
-                    corporatorwise = source.getLayer("geonode:ward_boundaries_after_cleaning").addTo(mymap);
+                    corporatorwise = L.geoJSON.ajax('data/corporator_boundries.geojson', {
+                     //pointToLayer: returnCompMarker, filter:filterComp
+                     // filter: function(feature, layer) {   
+                     //     return (feature.properties.society_name === "Amber");
+                     //   }
+                  }).addTo(mymap);
                 }
                 
             }
 
             function addBuildsegLayer(){
-                var blueMarker = {
-  radius: 8,
-  fillColor: "#00ff00",
-  fillOpacity: 1
-};
-
-var redMarker = {
-  radius: 8,
-  fillColor: "#ff0000",
-  fillOpacity: 1
-}
                 console.log('this is fulcrum data ');
                 if(buildseg){
                     buildseg.remove(mymap);
                     buildseg = 0;
                 }else{
                    buildseg = L.geoJSON.ajax('data/new_swm_hwest.geojson', {
-     pointToLayer: returnEagleMarker, filter:filterEagle
-     // filter: function(feature, layer) {   
-     //     return (feature.properties.society_name === "Amber");
-     //   }
-  }).addTo(mymap);
+                     pointToLayer: returnEagleMarker, filter:filterEagle
+                     // filter: function(feature, layer) {   
+                     //     return (feature.properties.society_name === "Amber");
+                     //   }
+                  }).addTo(mymap);
+
+                }
+                
+            }
+
+            function addBuildcompLayer(){
+                console.log('this is fulcrum data ');
+                if(buildcomp){
+                    buildcomp.remove(mymap);
+                    buildcomp = 0;
+                }else{
+                   buildcomp = L.geoJSON.ajax('data/new_swm_hwest.geojson', {
+                     pointToLayer: returnCompMarker, filter:filterComp
+                     // filter: function(feature, layer) {   
+                     //     return (feature.properties.society_name === "Amber");
+                     //   }
+                  }).addTo(mymap);
 
                 }
                 
@@ -535,9 +639,9 @@ var redMarker = {
             function returnEagleMarker(json, latlng){
                 var att = json.properties;
                 if (att.is_the_segregation_at_source_adequate=='Yes') {
-                    var clrNest = 'deeppink';
-                } else {
                     var clrNest = 'chartreuse';
+                } else {
+                    var clrNest = 'deeppink';
                 }
                 // arEagleIDs.push(att.nest_id.toString());
                 return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<h4>Society Name: "+att.society_name+"</h4>Segeregation at source: "+att.is_the_segregation_at_source_adequate);
@@ -556,6 +660,32 @@ var redMarker = {
             $("input[name=fltEagle]").click(function(){
                 //arEagleIDs=[];
                 buildseg.refresh();
+            });
+
+            function returnCompMarker(json, latlng){
+                var att = json.properties;
+                if (att.do_you_have_any_in_house_composting_facility=='Yes') {
+                    var clrNest = 'chartreuse';
+                } else {
+                    var clrNest = 'deeppink';
+                }
+                // arEagleIDs.push(att.nest_id.toString());
+                return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<h4>Society Name: "+att.society_name+"</h4>Composting at source: "+att.do_you_have_any_in_house_composting_facility);
+            }
+
+            function filterComp(json) {
+                var att=json.properties;
+                var optFilter = $("input[name=optbcomp]:checked").val();
+                if (optFilter=='ALL') {
+                    return true;
+                } else {
+                    return (att.do_you_have_any_in_house_composting_facility==optFilter);
+                }
+            }
+
+            $("input[name=optbcomp]").click(function(){
+                //arEagleIDs=[];
+                buildcomp.refresh();
             });
 
         </script>
