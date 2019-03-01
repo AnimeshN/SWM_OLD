@@ -111,12 +111,14 @@
                         <!-- <button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button> -->
                         <div class="menu__wrap">
                             <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="Themes">
-                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Mumbai<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                                <li class="menu__item" role="menuitem"><a id="locatemumbai" class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Mumbai<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Census<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
                                 <!-- <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Analytics</a></li> -->
                                 <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Education<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-4" href="#">Health<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
-                            
+                                <li class="menu__item" role="menuitem"><a class="menu__link" id="locatepune" data-submenu="submenu-5" aria-owns="submenu-1" href="#">Pune<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" id="locategoa" data-submenu="submenu-6" aria-owns="submenu-1" href="#">Goa<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+
                             </ul>
                             <!-- Submenu 1 -->
                             <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Mumbai">
@@ -171,12 +173,14 @@
                             </ul>
                             <!-- Submenu 1-4-7 -->
                             <ul data-menu="submenu-1-4-7" id="submenu-1-4-7" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Greenness">
-                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-1" aria-owns="submenu-1-4-7-1" href="#">Building: Seggregation wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
-                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-2" aria-owns="submenu-1-4-7-2" href="#">Building: Composting wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-1" aria-owns="submenu-1-4-7-1" href="#">Building: Seggregation Wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-2" aria-owns="submenu-1-4-7-2" href="#">Building: Composting Wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-3" aria-owns="submenu-1-4-7-2" href="#">Building: Weight Wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+
                                 
                                 <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Coorporate: Seggregation wise</a></li>
-                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Coorporate: Composting wise</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Corporation Ward: Seggregation wise</a></li>
+                                <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Corporation Ward: Composting wise</a></li>
                             </ul>
 
                             <!-- Submenu 1-4-7-1 -->
@@ -199,9 +203,27 @@
                                 </div>
                             </ul>
 
-                            <ul data-menu="submenu-1-4-7-2" id="submenu-1-4-7-2" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Seggregation wise">
+                            <ul data-menu="submenu-1-4-7-2" id="submenu-1-4-7-2" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Composting wise">
                                  <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
                                  <li class="menu__item" role="menuitem"><a id="buildcomp" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
+                                <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
+                                <div id="divFilterEagle" class="col-xs-12">
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='optbcomp' value='ALL' checked>All
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='optbcomp' value='Yes'>Yes
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type='radio' name='optbcomp' value='No'>No
+                                    </div>
+                                </div>
+                            </ul>
+
+                             <ul data-menu="submenu-1-4-7-3" id="submenu-1-4-7-2" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Weight Wise">
+                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
+                                 <li class="menu__item" role="menuitem"><a id="buildweight" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
                                 <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
                                  <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
                                 <div id="divFilterEagle" class="col-xs-12">
@@ -292,6 +314,17 @@
                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">India</a></li>
                                 <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Maharashra</a></li>
                         </ul> 
+
+                         <!-- Submenu 6 -->
+                         <ul data-menu="submenu-6" id="submenu-6" class="menu__level" tabindex="-1" role="menu" aria-label="goa">
+                            <li class="menu__item" role="menuitem"><a class="menu__link"  id = 'locateponda' data-submenu="submenu-6-1" aria-owns="submenu-6-1" href="#">Ponda</a></li>
+                    </ul> 
+                      <!-- Submenu 6-1 -->
+                      <ul data-menu="submenu-6-1" id="submenu-4" class="menu__level" tabindex="-1" role="menu" aria-label="Health">
+                        <li class="menu__item" role="menuitem"><a class="menu__link" id = 'ponda_points' href="#">points</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" id = 'ponda_polygons' href="#">polygons</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" id = 'ponda_lines' href="#">polylines</a></li>
+                </ul> 
                         
                         </div>
                     </nav>
@@ -369,7 +402,8 @@
             var ctlLayers;
             var objBasemaps;
             var objOverlays;
-            var building, roads,primarys,districtL,wardl,ddwl,buildseg,corporatorwise,buildcomp;
+            var building, roads,primarys,districtL,wardl,ddwl,buildseg,corporatorwise,buildcomp,buildweight;
+            var pondalinelyr,pondapointlyr,pondapolygonlyr;
             var source = L.wms.source(
                 "http://13.82.229.27/geoserver/wfs",
                 {
@@ -475,6 +509,10 @@
                     addBuildcompLayer();
                 });
 
+                 $("#buildweight").click(function(){
+                    addBuildweightLayer();
+                });
+
                  $("#corporatorwise").click(function(){
                     addCorporatorLayer();
                 });
@@ -500,11 +538,40 @@
                     addDDWLayer();
                 });
 
-                $("#btnZocalo").click(function(){
-                    mymap.setView([19.43262, -99.13325], 17);
-                    mymap.openPopup(popZocalo);
-                })
+                $("#locatemumbai").click(function(){
+                    mymap.setView([19.0607, 72.8362], 13);
+                    // mymap.openPopup(popZocalo);
+                });
+
+                $("#locatepune").click(function(){
+                    mymap.setView([18.5204, 73.8567], 13);
+                    // mymap.openPopup(popZocalo);
+                });
                 
+
+                $("#locategoa").click(function(){
+                    mymap.setView([15.2993, 74.1240], 11);
+                    // mymap.openPopup(popZocalo);
+                });
+
+                $("#locateponda").click(function(){
+                    mymap.setView([15.3991, 74.0124], 15);
+                    // mymap.openPopup(popZocalo);
+                });
+
+                $("#ponda_lines").click(function(){
+                    addPondaLinesLayer();
+                });
+
+                $("#ponda_polygons").click(function(){
+                    addPondaPolygonsLayer();
+                });
+
+                $("#ponda_points").click(function(){
+                    addPondaPointsLayer();
+                });
+
+
                 $("#sldOpacity").on('change', function(){
                     $("#image-opacity").html(this.value);
                     lyrChapultepec.setOpacity(this.value);
@@ -514,7 +581,41 @@
 
             function LatLngToArrayString(ll) {
 //                console.log(ll);
-                return "["+ll.lat.toFixed(5)+", "+ll.lng.toFixed(5)+"]";
+                return "["+ll.lat.toFixed(5)+""+ll.lng.toFixed(5)+"]";
+            }
+
+
+            function addPondaLinesLayer(){
+                console.log('this is pondalines');
+                if(pondalinelyr){
+                    pondalinelyr.remove(mymap);
+                    pondalinelyr = 0;
+                }else{
+                    pondalinelyr = source.getLayer("geonode:ponda_goa_polylines").addTo(mymap);
+                }
+                
+            }
+
+            function addPondaPolygonsLayer(){
+                console.log('this is pondapolygon');
+                if(pondapolygonlyr){
+                    pondapolygonlyr.remove(mymap);
+                    pondapolygonlyr = 0;
+                }else{
+                    pondapolygonlyr = source.getLayer("geonode:ponda_goa_polygons_1").addTo(mymap);
+                }
+                
+            }
+
+            function addPondaPointsLayer(){
+                console.log('this is pondapoint');
+                if(pondapointlyr){
+                    pondapointlyr.remove(mymap);
+                    pondapointlyr = 0;
+                }else{
+                    pondapointlyr = source.getLayer("geonode:ponda_goa_points").addTo(mymap);
+                }
+                
             }
 
             function addBuildingLayer(){
@@ -550,7 +651,7 @@
                     buildseg.remove(mymap);
                     buildseg = 0;
                 }else{
-                   buildseg = L.geoJSON.ajax('data/new_swm_hwest.geojson', {
+                   buildseg = L.geoJSON.ajax('data/swm_hwest/swm_hwest.geojson', {
                      pointToLayer: returnEagleMarker, filter:filterEagle
                      // filter: function(feature, layer) {   
                      //     return (feature.properties.society_name === "Amber");
@@ -567,7 +668,7 @@
                     buildcomp.remove(mymap);
                     buildcomp = 0;
                 }else{
-                   buildcomp = L.geoJSON.ajax('data/new_swm_hwest.geojson', {
+                   buildcomp = L.geoJSON.ajax('data/swm_hwest/swm_hwest.geojson', {
                      pointToLayer: returnCompMarker, filter:filterComp
                      // filter: function(feature, layer) {   
                      //     return (feature.properties.society_name === "Amber");
@@ -577,6 +678,25 @@
                 }
                 
             }
+
+            function addBuildweightLayer(){
+                console.log('this is fulcrum data ');
+                if(buildweight){
+                    buildweight.remove(mymap);
+                    buildweight = 0;
+                }else{
+                   buildweight = L.geoJSON.ajax('data/swm_hwest/swm_hwest.geojson', {
+                     pointToLayer: returnWeightMarker
+                     // filter: function(feature, layer) {   
+                     //     return (feature.properties.society_name === "Amber");
+                     //   }
+                  }).addTo(mymap);
+
+                }
+                
+            }
+
+            
 
             function addRoadLayer(){
                 console.log('Road');
@@ -644,7 +764,7 @@
                     var clrNest = 'deeppink';
                 }
                 // arEagleIDs.push(att.nest_id.toString());
-                return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<h4>Society Name: "+att.society_name+"</h4>Segeregation at source: "+att.is_the_segregation_at_source_adequate);
+                return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<img width=100 height=100 src='data/swm_hwest/"+att.society_photo+".jpg'/><h4>Society Name: "+att.society_name+"</h4>Segeregation at source: "+att.is_the_segregation_at_source_adequate);
             }
 
             function filterEagle(json) {
@@ -670,7 +790,7 @@
                     var clrNest = 'deeppink';
                 }
                 // arEagleIDs.push(att.nest_id.toString());
-                return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<h4>Society Name: "+att.society_name+"</h4>Composting at source: "+att.do_you_have_any_in_house_composting_facility);
+                return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<img width=100 height=100 src='data/swm_hwest/"+att.society_photo+".jpg'/><h4>Society Name: "+att.society_name+"</h4>Composting at source: "+att.do_you_have_any_in_house_composting_facility);
             }
 
             function filterComp(json) {
@@ -687,6 +807,19 @@
                 //arEagleIDs=[];
                 buildcomp.refresh();
             });
+
+            function returnWeightMarker(json, latlng){
+                var att = json.properties;
+                // if (att.do_you_have_any_in_house_composting_facility=='Yes') {
+                //     var clrNest = 'chartreuse';
+                // } else {
+                //     var clrNest = 'deeppink';
+                // }
+                // arEagleIDs.push(att.nest_id.toString());
+                var new_popu = att.flats * 2;
+                var new_weight = att.weight/new_popu;
+                return L.circle(latlng, {radius:10, color:"chartreuse"}).bindTooltip("<img width=100 height=100 src='data/swm_hwest/"+att.society_photo+".jpg'/><h4>Society Name: "+att.society_name+"</h4>Weight: "+new_weight);
+            }
 
         </script>
     </body>
